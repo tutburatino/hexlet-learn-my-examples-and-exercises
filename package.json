@@ -1,0 +1,36 @@
+{
+  "name": "hexlet-learn-my-examples-and-exercises",
+  "version": "1.0.0",
+  "description": "Reflections and solutions of exercises from the learning project Hexlet.",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tutburatino/hexlet-learn-my-examples-and-exercises-.git"
+  },
+  "keywords": [
+    "exercises",
+    "Haggarty"
+  ],
+  "author": "MiP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tutburatino/hexlet-learn-my-examples-and-exercises.git-/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/tutburatino/hexlet-learn-my-examples-and-exercises-#readme",
+  "dependencies": {
+    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
+    "source-map-support": "^0.5.10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
+  }
+}
