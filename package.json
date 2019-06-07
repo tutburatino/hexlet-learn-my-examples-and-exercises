@@ -2,27 +2,30 @@
   "name": "hexlet-learn-my-examples-and-exercises",
   "version": "1.0.0",
   "description": "Reflections and solutions of exercises from the learning project Hexlet.",
-  "main": " ",
-  "scripts": {
-    "test": "jest --colors"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tutburatino/hexlet-learn-my-examples-and-exercises-.git"
-  },
-  "keywords": [
-    "exercises",
-    "Haggarty"
-  ],
   "author": "MiP",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tutburatino/hexlet-learn-my-examples-and-exercises.git-/issues"
   },
+  "homepage": "https://github.com/tutburatino/hexlet-learn-my-examples-and-exercises-#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tutburatino/hexlet-learn-my-examples-and-exercises-.git"
+  },
+  "keywords": [
+    "exercises"
+  ],
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/tutburatino/hexlet-learn-my-examples-and-exercises-#readme",
+  "scripts": {
+    "test": "jest --colors",
+    "build": "NODE_ENV=production babel src --out-dir dist",
+    "prepublishOnly": "npm run build"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {
     "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
     "hexlet-immutable-fs-trees": "^0.3.1",
@@ -34,6 +37,16 @@
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
-    "jest": "^24.8.0"
+    "babel-jest": "^24.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-flowtype": "^3.2.1",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jest": "^22.1.3",
+    "eslint-plugin-lodash-fp": "^2.2.0-a1",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.0.0"
   }
 }
