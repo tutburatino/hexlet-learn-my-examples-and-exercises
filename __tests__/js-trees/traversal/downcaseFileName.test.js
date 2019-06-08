@@ -1,6 +1,6 @@
 import { cloneDeep } from 'lodash/fp';
 import { mkdir, mkfile } from 'hexlet-immutable-fs-trees';
-import downcaseFileNames from '../src/js-trees/traversal/downcaseFileNames';
+import downcaseFileNames from '../../../src/js-trees/traversal/downcaseFileNames';
 
 describe('should', () => {
   test('be immutable', () => {
