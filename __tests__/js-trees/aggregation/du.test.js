@@ -24,9 +24,9 @@ test('du', () => {
     ['resolve', 1000],
   ]);
 
-  // expect(du(tree.children[0])).toEqual([
-  //   ['consul', 9480],
-  //   ['nginx', 800],
-  //   ['apache', 0],
-  // ]);
+  expect(du(tree.children[0])).toEqual([
+    ['consul', 9480],
+    ['nginx', 800],
+    ['apache', 0],
+  ]);
 });
