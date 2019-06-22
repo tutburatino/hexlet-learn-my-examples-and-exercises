@@ -1,20 +1,40 @@
-const attrToStr = a => a;
-
-const getAttributes = data => data.filter(n => !(n instanceof Array || typeof n === 'string'))
-  .map(attrToStr)
+const attrsToStr = attrs => Object.entries(attrs)
+  .map(([key, value]) => ` ${key}="${value}"`)
   .join('');
 
-const getBody = (data) => {
-  const result = typeof data === 'string'
-    ? data
-    : data.filter(n => n instanceof Array)
-      .map(buildTag);
-  return result.join('');
-};
+const tagsProperties = [
+  {
+    name: 'body',
+    check: d => typeof d === 'string',
+  },
+  {
+    name: 'children',
+    check: d => d instanceof Array,
+  },
+  {
+    name: 'attributes',
+    check: d => d instanceof Object,
+  },
+];
+
+const getProperty = data => tagsProperties.find(({ check }) => check(data));
 
 const buildHtml = (data) => {
-  const [tag, ...i] = data;
-  return `<${tag}${getAttributes(i)}>${getBody(i)}</${tag}>`;
+  const [first, ...rest] = data;
+
+  const root = {
+    name: first,
+    attributes: {},
+    body: '',
+    children: [],
+  };
+
+  const tag = rest.reduce((acc, node) => {
+    const { name } = getProperty(node);
+    return { ...acc, [name]: node };
+  }, root);
+
+  return `<${tag.name}${attrsToStr(tag.attributes)}>${tag.body}${tag.children.map(t => buildHtml(t)).join('')}</${tag.name}>`;
 };
 
 export default buildHtml;
