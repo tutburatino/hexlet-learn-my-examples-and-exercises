@@ -7,7 +7,6 @@ export default class FilmScreening extends ApplicationEntity {
   constructor(film, cinemaHall, time) {
     super();
     this.id = uuid();
-    console.log(this.id);
     this.film = film;
     this.cinemaHall = cinemaHall;
     this.time = time;
