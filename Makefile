@@ -4,7 +4,8 @@ run:
 	npx babel-node
 
 install-deps:
-	npm install
+	rm -rf node-modules
+	npm ci
 
 build:
 	rm -rf dist
