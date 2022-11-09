@@ -14,6 +14,9 @@ build:
 test:
 	npm test
 
+live-test:
+	npx jest --watchAll
+
 lint:
 	npx eslint .
 
